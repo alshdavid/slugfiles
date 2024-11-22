@@ -1,0 +1,21 @@
+[package]
+name = "slugfiles"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+clap = { version = "*", features = ["derive"] }
+normalize-path = "*"
+anyhow = "*"
+pathdiff = "*"
+slugify = "*"
+
+[profile.release]
+opt-level = 3
+debug = false
+lto = true
+strip = "debuginfo"
+panic = 'unwind'
+incremental = false
+codegen-units = 1
+rpath = false
